@@ -9,9 +9,16 @@ import SwiftUI
 
 struct PokemonList: View {
     var body: some View {
-        List(pokemons) { pokemon in
-            PokemonRow(pokemon: pokemon)
+        NavigationView {
+            List(pokemons) { pokemon in
+                NavigationLink {
+                    PokemonDetail(pokemon: pokemon)
+                } label: {
+                    PokemonRow(pokemon: pokemon)
+                }
+            }
         }
+        .navigationTitle("Pokemon")
     }
 }
 

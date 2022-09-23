@@ -11,11 +11,7 @@ import ActivityKit
 struct ContentView: View {
     
     var body: some View {
-        NavigationView{
-            VStack{
-                PokemonList()
-            }
-        }
+        PokemonList()
     }
     
 //    @State var currentID: String = ""
@@ -156,4 +152,10 @@ struct ContentView: View {
 //            print(error.localizedDescription)
 //        }
 //    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }

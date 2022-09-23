@@ -8,4 +8,4 @@
 ## References
 
 - [Building Lists and Navigation](https://developer.apple.com/tutorials/swiftui/building-lists-and-navigation)
-- [DynamicIsland Tutorial](https://github.com/banjodayo39/DynamicIslandTutorial)
+- [Dynamic Island Tutorial](https://github.com/banjodayo39/DynamicIslandTutorial)
