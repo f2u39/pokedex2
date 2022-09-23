@@ -1,0 +1,26 @@
+[
+    {
+        "id": "001",
+        "name": "Bulbasaur",
+        "jp_name": "フシギダネ",
+        "types": ["Grass", "Poison"],
+        "evolution": ["001", "002", "003"],
+        "description": "There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.",
+    },
+    {
+        "id": "002",
+        "name": "Ivysaur",
+        "jp_name": "フシギソウ",
+        "types": ["Grass", "Poison"],
+        "evolution": ["001", "002", "003"],
+        "description": "When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.",
+    },
+    {
+        "id": "003",
+        "name": "Venusaur",
+        "jp_name": "フシギバナ",
+        "types": ["Grass", "Poison"],
+        "evolution": ["001", "002", "003"],
+        "description": "Its plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.",
+    },
+]
