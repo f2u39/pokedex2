@@ -12,69 +12,54 @@ import Intents
 @main
 struct PokemonStatus: Widget {
     var body: some WidgetConfiguration {
-        
-        ActivityConfiguration(for: WorkoutAttributes.self) { context in
-            // Create the view that appears on the Lock Screen and as a
-            // banner on the Home Screen of devices that don't support the
-            // Dynamic Island.
-            //LockScreenLiveActivityView(context: context)
+        ActivityConfiguration(for: PokemonAttributes.self) { context in
         } dynamicIsland: { context in
-            // Create the views that appear in the Dynamic Island.
-            // MARK: Implementing Dynamic Island
-            // MARK: Since Live Activites and Dynamic Island Shares Same Data
             DynamicIsland {
-                // MARK: Expanded When Long Pressed
-                // MARK: Expanded Region can be classified into Four Types
-                // Leading, Trailing, Center, Bottom
+                // ---------------------------------------
+                // |compactLeading ■■■■ ◉ compactTrailing|  minimal
+                // ---------------------------------------
+                // 
+                // -----------------------
+                // |Lead  |Center|  Trail|
+                // |-ing  |Buttom|  -ing |
+                // -----------------------
                 DynamicIslandExpandedRegion(.leading) {
                     HStack{
-                        Image("me")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 40, height: 40)
+                        Image(systemName: "person")
+                            .font(.system(size: 14))
                             .clipShape(Circle())
-
-                        
-                        Text("Workout Running")
+                        Text("CenterText")
                             .font(.system(size: 14))
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity,alignment: .leading)
                     }
                 }
+                
                 DynamicIslandExpandedRegion(.trailing) {
-                    Image(systemName: "figure.run.circle")
+                    Image(systemName: "timer")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 25, height: 25)
                 }
-                DynamicIslandExpandedRegion(.center) {
-                    // This App Don't Require Any Content on Center
-                    // But You Can use it in your App
-                }
+                DynamicIslandExpandedRegion(.center) {}
                 DynamicIslandExpandedRegion(.bottom) {
                     DynamicIslandStatusView(context: context)
                 }
             } compactLeading: {
-                // MARK: For Video Example We're showing App Logo
-                Image("me")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .clipShape(Circle())
-                    .padding(4)
-                    .offset(x: -4)
+                Image(systemName: "heart")
+                    .font(.title3)
             } compactTrailing: {
-                Image(systemName: "figure.run")
+                Image(systemName: "pencil")
                     .font(.title3)
             } minimal: {
-                // MARK: Minimal Will be only visible when Multiple Activites are there
-                Image(systemName: "figure.run")
+                Image(systemName: "house")
                     .font(.title3)
             }
         }
     }
         
     @ViewBuilder
-    func DynamicIslandStatusView(context: ActivityViewContext<WorkoutAttributes>)->some View{
+    func DynamicIslandStatusView(context: ActivityViewContext<PokemonAttributes>)->some View{
         HStack(alignment: .bottom, spacing: 0){
             VStack(alignment: .leading, spacing: 4) {
                 Text("Active Calories")
@@ -88,33 +73,9 @@ struct PokemonStatus: Widget {
             .offset(x: 5,y: 5)
             
             HStack(alignment: .bottom,spacing: 0){
-                ProgressBar(progress: .constant(context.state.progress))
+                Image("003")
                     .frame(width: 45, height: 45)
             }
-            
-          
         }
-    }
-}
-
-struct ProgressBar : View {
-    @Binding var progress : Float
-    var colors: [Color] = [.red, .blue]
-    
-    var body: some View {
-        ZStack {
-            Circle()
-                .stroke(lineWidth: 10.0)
-                .opacity(0.20)
-                .foregroundColor(Color.gray)
-            
-            Circle()
-                .trim(from: 0.0, to: CGFloat(min(self.progress, 1.0)))
-                .stroke(
-                        style: StrokeStyle(lineWidth: 10.0, lineCap: .round, lineJoin: .round))
-                .foregroundColor(Color.blue)
-                .rotationEffect(Angle(degrees: 270))
-                .animation(.easeInOut(duration: 2.0), value: 1.0)
-        }.background(Color.black)
     }
 }

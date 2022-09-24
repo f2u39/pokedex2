@@ -2,7 +2,10 @@
 
 ## Status
 
-- Sep 23, 2022 ⚪️
+| Date | Status |
+| --- | --- |
+| Sep 23, 2022 | ⚪️ |
+| Sep 23, 2022 | 🟢 |
 
 
 ## References

@@ -15,12 +15,11 @@ struct PokemonRow: View {
     
     var body: some View {
         HStack {
-            pokemon.image
-                .resizable()
-                .frame(width: 50, height: 50)
+            AsyncImage(url: URL(string: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/"+pokemon.id+".png")!,
+                       placeholder: { Text("Loading...") },
+                       image: { Image(uiImage: $0).resizable() })
+            .frame(width: 50, height: 50)
             Text(pokemon.name)
-            Text(pokemon.jp_name)
-            
             Spacer()
         }
     }

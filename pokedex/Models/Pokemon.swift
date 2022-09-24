@@ -9,13 +9,14 @@ import Foundation
 import SwiftUI
 import CoreLocation
 
-struct Pokemon: Hashable, Codable, Identifiable {
+struct Type: Codable {
+    var name: String
+}
+
+struct Pokemon: Codable, Identifiable {
     var id: String
     var name: String
     var jp_name: String
+    var types: [Type]
     var description: String
-    
-    var image: Image {
-        Image(id)
-    }
 }

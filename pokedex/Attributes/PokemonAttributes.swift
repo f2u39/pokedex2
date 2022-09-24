@@ -1,5 +1,5 @@
 //
-//  NavigationAttributes.swift
+//  PokemonAttributes.swift
 //  pokedex
 //
 //  Created by Fuu on 2022/09/23.
@@ -8,16 +8,14 @@
 import SwiftUI
 import ActivityKit
 
-struct WorkoutAttributes: ActivityAttributes {
+struct PokemonAttributes: ActivityAttributes {
     
     struct ContentState: Codable,Hashable{
         var status: Status = .stop
         var progress: Float = 0.6
     }
 
-    
     var workoutName: String
-    
 }
 
 enum Status : String, CaseIterable, Codable, Equatable{
