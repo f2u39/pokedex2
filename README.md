@@ -1,11 +1,9 @@
 #  Pokedex
 
-## Status
-
-| Date | Status |
-| --- | --- |
-| Sep 23, 2022 | ⚪️ |
-| Sep 23, 2022 | 🟢 |
+| Date | Status | Desc |
+| --- | --- | --- |
+| Sep 23, 2022 | ⚪️ | Gonna relearn swift |
+| Sep 23, 2022 | 🟢 | In progress |
 
 
 ## References
