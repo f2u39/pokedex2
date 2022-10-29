@@ -4,6 +4,7 @@
 | --- | --- | --- |
 | Sep 23, 2022 | ⚪️ | Gonna relearn swift |
 | Sep 23, 2022 | 🟢 | In progress |
+| Oct 29, 2022 | 🟡 | Suspending |
 
 
 ## References
